@@ -1,0 +1,30 @@
+{
+  "routes": [
+    {
+      "route": "/admin/*",
+      "allowedRoles": [
+        "admin"
+      ]
+    },
+    {
+      "route": "/login",
+      "rewrite": "/.auth/login/aad"
+    },
+    {
+      "route": "/.auth/login/twitter",
+      "statusCode": 404
+    },
+    {
+      "route": "/logout",
+      "rewrite": "/.auth/logout"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/assets/*.{js,map}",
+      "/assets/*.{png,jpg,gif}",
+      "/assets/*"
+    ]
+  }
+}
