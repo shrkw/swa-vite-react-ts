@@ -3,7 +3,7 @@
     {
       "route": "/admin/*",
       "allowedRoles": [
-        "admin"
+        "shirakawa-test"
       ]
     },
     {
