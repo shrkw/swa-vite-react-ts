@@ -18,15 +18,8 @@ function App() {
           </button>
         </p>
         <p>
-          Edit <code>App.tsx</code> and save to test HMR updates. Foo
+          Edit <code>App.tsx</code> and save to test HMR updates.
         </p>
-        <p>
-          <a href="/.auth/login/aad?post_login_redirect_uri=/admin">Login</a>
-        </p>
-        <p>
-          <a href="/.auth/logout?post_logout_redirect_uri=/">Logout</a>
-        </p>
-
         <p>
           <a
             className="App-link"

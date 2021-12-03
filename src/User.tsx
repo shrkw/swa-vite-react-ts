@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-interface UserInfo {
-  userDetails: string;
+interface ClientPrincipal {
   identityProvider: string;
+  userId: string;
+  userDetails: string;
+  userRoles: string[];
 }
 
 export const User = () => {
-  const [userInfo, setUserInfo] = useState<UserInfo | undefined>();
+  const [userInfo, setUserInfo] = useState<ClientPrincipal | undefined>();
 
   useEffect(() => {
     (async () => {
@@ -14,7 +16,7 @@ export const User = () => {
     })();
   }, []);
 
-  async function getUserInfo(): Promise<UserInfo | undefined> {
+  async function getUserInfo(): Promise<ClientPrincipal | undefined> {
     try {
       const response = await fetch('/.auth/me');
       const payload = await response.json();
@@ -28,11 +30,15 @@ export const User = () => {
 
   return (
     <div>
+      <p>
+        <a href="/.auth/login/aad?post_login_redirect_uri=/admin">Login</a>, <a href="/.auth/logout?post_logout_redirect_uri=/">Logout</a>
+      </p>
     {userInfo && (
       <div>
         <div className="user">
           <p>Welcome</p>
-          <p>User name: {userInfo && userInfo.userDetails}, Provider: {userInfo && userInfo.identityProvider}</p>
+          <p>User name: {userInfo.userDetails}, Provider: {userInfo.identityProvider}</p>
+          <p>Roles: {userInfo.userRoles}, userId: {userInfo.userId}</p>
         </div>
       </div>)}
       </div>
