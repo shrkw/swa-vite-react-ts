@@ -1,7 +1,15 @@
 {
   "networking": {
     "allowedIpRanges": [
-      "217.178.136.0/24"
+      "AzureFrontDoor.Backend"
+    ]
+  },
+  "forwardingGateway": {
+    "requiredHeaders": {
+      "X-Azure-FDID": "eed73547-98f8-4654-9d58-802b17427721"
+    },
+    "allowedForwardedHosts": [
+      "eaoiroawe.azurefd.net"
     ]
   },
   "routes": [
