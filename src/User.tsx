@@ -31,14 +31,14 @@ export const User = () => {
   return (
     <div>
       <p>
-        <a href="/.auth/login/aad?post_login_redirect_uri=/admin">Login</a>, <a href="/.auth/logout?post_logout_redirect_uri=/">Logout</a>
+        <a href="/login?post_login_redirect_uri=/admin">Login</a>, <a href="/logout?post_logout_redirect_uri=/">Logout</a>
       </p>
     {userInfo && (
       <div>
         <div className="user">
           <p>Welcome</p>
           <p>User name: {userInfo.userDetails}, Provider: {userInfo.identityProvider}</p>
-          <p>Roles: {userInfo.userRoles}, userId: {userInfo.userId}</p>
+          <p>Roles: {userInfo.userRoles.join(", ")}, userId: {userInfo.userId}</p>
         </div>
       </div>)}
       </div>

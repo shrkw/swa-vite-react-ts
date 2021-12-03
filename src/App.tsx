@@ -18,7 +18,7 @@ function App() {
           </button>
         </p>
         <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
+        <a href="/admin">admin</a>, <a href="/authenticated">authenticated</a>
         </p>
         <p>
           <a
